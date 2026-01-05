@@ -11,3 +11,7 @@ Création physique de la base (CREATE TABLE) avec définition des clés primaire
 Peuplement de la base avec des jeux de données fictifs pour tester sa solidité.
 
 🛠 Stack : SQL, Modélisation (UML/Merise), SGBD.
+
+<img src="images/Capture d'écran 2025-11-05 153104.png" width="500px"><img src="images/Capture d'écran 2025-11-05 153124.png" width="500px">
+
+<img src="images/Capture d'écran 2025-11-05 152744.png" width="500px"><img src="images/Capture d'écran 2025-11-05 152755.png" width="500px">
