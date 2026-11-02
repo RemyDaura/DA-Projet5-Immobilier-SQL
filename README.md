@@ -1,17 +1,37 @@
-# DA-Projet5-Immobilier-SQL
-Projet 5 : Création d'une base de données immobilière
-Le Pitch : Contrairement au projet 3 où je ne faisais que lire les données, ici j'ai dû porter la casquette d'architecte. J'ai conçu le système d'information d'une agence immobilière de A à Z. Il fallait structurer la base de données pour qu'elle soit logique, performante et sans redondance d'informations.
+# Projet 5 : Conception d'une base de données immobilière (SQL)
 
-Ce que j'ai fait :
+### Contexte
+Le projet **DATAImmo** vise à améliorer la prévision des prix immobiliers. Première phase : concevoir une base qui consolide les transactions immobilières (DVF), les données de population de l'INSEE et un référentiel géographique.
 
-Modélisation des données : création du dictionnaire des données et du schéma relationnel (MCD/MLD).
+**Mon objectif :** passer de données brutes et éclatées à une base normalisée, conforme et déjà exploitable pour trois besoins : la valorisation (cibler les biens de luxe), la pression démographique (dynamisme du marché) et la segmentation (prix selon le type de bien).
 
-Création physique de la base (CREATE TABLE) avec définition des clés primaires et étrangères.
+### Missions réalisées
+* **Dictionnaire de données :** atomicité des variables, typage précis, et vérification qu'aucune donnée personnelle n'est stockée.
+* **Modélisation en 3NF :** 5 entités liées en cascade (VENTE, BIEN, COMMUNE, DÉPARTEMENT, RÉGION) pour analyser un bien à n'importe quel niveau géographique sans dupliquer d'information.
+* **Création de la base sous MySQL :** conversion des dates en type DATE, clés étrangères activées, index sur la colonne géographique la plus sollicitée.
+* **Requêtes analytiques :**
+    * classement des 3 communes les plus chères par département avec `RANK() OVER (PARTITION BY ...)` ;
+    * nombre de transactions pour 1 000 habitants ;
+    * prix au m² des 2 et 3 pièces comparés en une seule requête (`AVG` avec `CASE WHEN`).
 
-Peuplement de la base avec des jeux de données fictifs pour tester sa solidité.
+### Résultats
+* **5 entités** normalisées, sans redondance.
+* **3 requêtes stratégiques** livrées et fonctionnelles.
+* Aucune donnée personnelle stockée : base conforme au RGPD.
 
-🛠 Stack : SQL, Modélisation (UML/Merise), SGBD.
+### Compétences & Outils
+* **Outils :** MySQL, SQL
+* **Techniques :** modélisation (MCD / MLD, 3NF), contraintes d'intégrité, index, fonctions de fenêtre, agrégation conditionnelle
+
+### Contenu du dépôt
+* `data-raw/` : transactions DVF, données des communes, référentiel géographique
+* `reports/` : dictionnaire de données et présentation
+* `images/` : captures d'écran
 
 <img src="images/Capture d'écran 2025-11-05 153104.png" width="500px"><img src="images/Capture d'écran 2025-11-05 153124.png" width="500px">
-
 <img src="images/Capture d'écran 2025-11-05 152744.png" width="500px"><img src="images/Capture d'écran 2025-11-05 152755.png" width="500px">
+
+---
+📂 Dossier complet sur mon portfolio : [remydaura.github.io/p5.html](https://remydaura.github.io/p5.html)
+
+*Ce projet fait partie de la formation Data Analyst d'OpenClassrooms.*
